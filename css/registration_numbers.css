@@ -1,7 +1,35 @@
+body{
+  background-color: #e7e7e7;
+}
+
+.dropdown-menu{
+  background: #fff;
+  box-shadow:  1px 2px 3px rgba(0,0,0,0.2);
+  border-bottom: 2px solid #603d7b;
+  padding: 20px;
+}
+
+.dropdown-menu ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu li{
+
+}
+
+
 .inputReg {
   text-transform: uppercase;
 }
 
-.addChild{
+.addChild li{
   text-transform: uppercase;
+  border: 2px solid #603d7b;
+  background-color: yellow;
+  list-style-type: none;
+  width:100px;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
 }

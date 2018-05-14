@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // add new elements function
   function createReg(Values) {
-    let child = document.createElement('div');
+    let child = document.createElement('li');
     child.textContent = Values;
     addContent.appendChild(child);
   }
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     displayRegNumber();
     cleartext();
   })
-  
+
   window.addEventListener('load', function() {
     var reg = Object.keys(regStorage)
 
