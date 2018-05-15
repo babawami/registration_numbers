@@ -48,7 +48,7 @@ function select(town){
 
 function select(regMap){
   var selected = Object.keys(regMap);
-
+for(var i = 0; i < selected.length; i++){
     if(selected.startsWith("CA")){
       return selected.startsWith("CA");
     }
@@ -62,6 +62,7 @@ function select(regMap){
     return selected.startsWith("CL");
   }
 
+}
 }
 
   function regProperties(regMap) {

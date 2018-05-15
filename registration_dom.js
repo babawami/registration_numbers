@@ -13,7 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
   function createReg(Values) {
     let child = document.createElement('li');
     child.textContent = Values;
+
     addContent.appendChild(child);
+    if(regStorage !== undefined){
+      child.classList.add("add");
+    }
+
+
+
   }
 
   //clear text in the textbox after being entred
@@ -28,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run when the textField is filled
     if (plateReg !== "") {
       let pushRegNum = getRegNumbers.storeRegNum(plateReg); // push to map
+      console.log(pushRegNum );
       createReg(pushRegNum);
     }
 
