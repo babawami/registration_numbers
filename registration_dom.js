@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // gets the the map stored.
   // let regStorage = JSON.parse(localStorage.getItem('storedReg'));
- let regStorage = localStorage.getItem('storedReg') ? JSON.parse(localStorage.getItem('storedReg')) : {};
+  let regStorage = localStorage.getItem('storedReg') ? JSON.parse(localStorage.getItem('storedReg')) : {};
   let getRegNumbers = regNumbers(regStorage); // it has input to avoid ovewrite of the entered properties
   //console.log(regStorage );
 
@@ -26,9 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-
-
-
   function displayRegNumber() {
     let plateReg = textField.value.trim().toUpperCase();
     // Run when the textField is filled
@@ -36,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let pushRegNum = getRegNumbers.storeRegNum(plateReg); // push to map
 
 
-      if(pushRegNum !== undefined){
+      if (pushRegNum !== undefined) {
         createReg(pushRegNum);
       }
 
@@ -54,36 +51,24 @@ document.addEventListener('DOMContentLoaded', function() {
     cleartext();
   });
 
-// filter registration_numbers according to location
-filterBtn.addEventListener('click',function(){
-addContent.innerHTML = "";
-let regListed =  Object.keys(regStorage);
-  let list = getRegNumbers.filterReg(regListed,area.value); //array
-  console.log(list);
-  for(i=0;i<list.length;i++){
-    createReg(list[i]);
-  }
+  // filter registration_numbers according to location
+  area.addEventListener('change', function() {
+    addContent.innerHTML = "";
+    //let regListed = Object.keys(regStorage);
+    let list = getRegNumbers.filterReg(regStorage, area.value); //array
+    for (i = 0; i < list.length; i++) {
+      createReg(list[i]);
+    }
 
+  });
 
-//  console.log(createReg(getRegNumbers.filterReg(regListed,area.value)));
-});
-
-
-
-// var x = getRegNumbers.filterReg(regListed,area.value)
-// if(x.length > 0){
-//   for (let i = 0; i < x.length; i++) {
-//
-//   }
-//
-// }
-// the registration numbers stay on the page after being refreshed
+  // the registration numbers stay on the page after being refreshed
   window.addEventListener('load', function() {
-    if(regStorage!==null){
-      var reg = Object.keys(regStorage);
-        for (let i = 0; i < reg.length; i++) {
-          createReg(reg[i])
-        }
+    if (regStorage !== null) {
+      let reg = Object.keys(regStorage);
+      for (var i = 0; i < reg.length; i++) {
+        createReg(reg[i])
+      }
     }
   })
 

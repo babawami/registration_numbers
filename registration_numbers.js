@@ -2,19 +2,31 @@ function regNumbers(regStorage) { // the input is to tell function that map shou
   let EnterPlateNum = "";
   let regMap = regStorage || {};
   let regKey = "";
-  // var filteredList= [];
+
 
 
   function storeRegNum(EnterPlateNum) {
+    let regList = ['CA ', 'CY ', 'CL ', 'CAW '];
+
     if (regMap[EnterPlateNum] === undefined) {
-      regMap[EnterPlateNum] = 0;
-      for (var key in regMap) {
-        var reg = key;
+      for (var i = 0; i < regList.length; i++) {
+        if(EnterPlateNum.startsWith(regList[i])){
+          regMap[EnterPlateNum] = 0;
+          for (var key in regMap) {
+            var reg = key;
+            //return true;
+          }
+         return reg;
+        }
+
+        }
+
       }
+  //  return false;
 
     }
-    return reg;
-  }
+
+
 
 
   function returnMap() {
@@ -23,13 +35,12 @@ function regNumbers(regStorage) { // the input is to tell function that map shou
 
 
 
-  function filterReg(reg, town){
-
+  function filterReg(regmap, town){
     var filteredList= [];
-      for(var i=0;i<reg.length;i++){
-
-        if (reg[i].startsWith(town)){
-          filteredList.push(reg[i]);
+    regmap = Object.keys(regMap); // array
+      for(var i=0;i<regmap.length;i++){
+        if (regmap[i].startsWith(town)){
+          filteredList.push(regmap[i]);
         }
       }
       return filteredList;
@@ -53,18 +64,18 @@ function regNumbers(regStorage) { // the input is to tell function that map shou
 //
 // function select(town){
 //
-//   var reg = ['CA', 'CY', 'CJ', 'CL', 'CAW'];
+//   var regStart = ['CA', 'CY', 'CJ', 'CL', 'CAW'];
 //
 //  // var reg = 'CA'
 //    var selected =  Object.keys(regMap);
 //    console.log(selected);
-//   for(var i = 0; i < selected.length; i++){
-//       if(selected[i].startsWith(town)){
+//   for(var i = 0; i < regStart.length; i++){
+//       if(selected.startsWith(regStart[i])){
 //
 //      return true
 //
 //       }
-//       return false
+//     return false
 //
 //     }
 //     return
@@ -80,10 +91,6 @@ function regNumbers(regStorage) { // the input is to tell function that map shou
 
 
   }
-
-
-
-
 
   return {
     regProperties: regProperties,
