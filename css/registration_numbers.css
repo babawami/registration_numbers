@@ -23,7 +23,7 @@ body{
   text-transform: uppercase;
 }
 
-.add{
+.addChild li{
   text-transform: uppercase;
   border: 2px solid #603d7b;
   background-color: yellow;
