@@ -6,9 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
   let area = document.querySelector(".area");
 
   // gets the the map stored.
-  let regStorage = JSON.parse(localStorage.getItem('storedReg'));
+  // let regStorage = JSON.parse(localStorage.getItem('storedReg'));
+ let regStorage = localStorage.getItem('storedReg') ? JSON.parse(localStorage.getItem('storedReg')) : {};
   let getRegNumbers = regNumbers(regStorage); // it has input to avoid ovewrite of the entered properties
-  console.log(regStorage );
+  //console.log(regStorage );
 
 
   // add new elements function
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run when the textField is filled
     if (plateReg !== "") {
       let pushRegNum = getRegNumbers.storeRegNum(plateReg); // push to map
-      // create storage to store the map
+
 
       if(pushRegNum !== undefined){
         createReg(pushRegNum);
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     }
+    // create storage to store the map
     localStorage.setItem('storedReg', JSON.stringify(getRegNumbers.returnMap()));
 
 
@@ -54,16 +56,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // filter registration_numbers according to location
 filterBtn.addEventListener('click',function(){
+addContent.innerHTML = "";
+let regListed =  Object.keys(regStorage);
+  let list = getRegNumbers.filterReg(regListed,area.value); //array
+  console.log(list);
+  for(i=0;i<list.length;i++){
+    createReg(list[i]);
+  }
 
-  var regListed = Object.keys(regStorage);
+
+//  console.log(createReg(getRegNumbers.filterReg(regListed,area.value)));
+});
 
 
-//  console.log(regListed)
-//  console.log(area.value);
-  // console.log(regListed);
-  getRegNumbers.filterReg(regListed,area.value);
-console.log(getRegNumbers.filterReg(regListed,area.value))
-createReg(getRegNumbers.filterReg(regListed,area.value))
+
 // var x = getRegNumbers.filterReg(regListed,area.value)
 // if(x.length > 0){
 //   for (let i = 0; i < x.length; i++) {
@@ -71,18 +77,14 @@ createReg(getRegNumbers.filterReg(regListed,area.value))
 //   }
 //
 // }
+// the registration numbers stay on the page after being refreshed
+  window.addEventListener('load', function() {
+    if(regStorage!==null){
+      var reg = Object.keys(regStorage);
+        for (let i = 0; i < reg.length; i++) {
+          createReg(reg[i])
+        }
+    }
+  })
 
 });
-
-
-// the registration numbers stay on the page after being refreshed
-  // window.addEventListener('load', function() {
-  //   if(regStorage!==null){
-  //     var reg = Object.keys(regStorage);
-  //       for (let i = 0; i < reg.length; i++) {
-  //         createReg(reg[i])
-  //       }
-  //   }
-  // })
-
-})

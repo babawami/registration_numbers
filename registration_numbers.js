@@ -24,9 +24,10 @@ function regNumbers(regStorage) { // the input is to tell function that map shou
 
 
   function filterReg(reg, town){
-  
+
     var filteredList= [];
       for(var i=0;i<reg.length;i++){
+
         if (reg[i].startsWith(town)){
           filteredList.push(reg[i]);
         }
