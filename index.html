@@ -36,48 +36,41 @@
 
     <!-- filter
 ___________________________________________________________-->
-    <div class="row">
+<div class="row">
+  <div class="twelve columns">
       <div class="three columns">
-        <div class="dropdown-menu">
-          <!-- <label for="">Select Town</label>
-          <div class="menu-content">
-            <ul>
-              <li value='CA '>Cape Town</li>
-              <li>Paarl</li>
-              <li>George</li>
-              <li>Stellenbosch</li>
-            </ul>
-          </div> -->
-          <form>
+          <form  class="dropdown-menu" >
           Select the town :
-          <select class="area">
-            <option>Area</option>
+          <select class="area ">
+            <option class="area" value="All">All</option>
             <option class="area"  value="CA " >Cape Town</option>
             <option  class="area" value="CAW ">George</option>
             <option class="area"   value="CJ ">Paarl</option>
             <option  class="area" value="CL ">Stellenbosch</option>
           </select>
           </form>
-
-        </div>
-
       </div>
-    </div>
+    <div class="message"></div>
+    <input type="text" name="regNum" class="inputReg six columns"   pattern="[A-Z0-9]" placeholder="eg: CA 123 456" title="" maxlength="11" required>
+
+  </div>
+</div>
+
     <br>
     <!--________________________________________________________-->
 
     <!-- input area
  ____________________________________________________________-->
-    <div class="row">
-      <input type="text" name="regNum" class="inputReg" pattern="" placeholder="" title="" maxlength="11">
-    </div>
+
     <!--______________________________________________________-->
 
     <!-- button area
  ____________________________________________________________-->
-    <div class="row">
+
       <button type="button" name="button" class="addbtn">ADD</button>
-    </div>
+      <button type="button" name="button" class="resetbtn">Reset</button>
+
+
     <!--______________________________________________________-->
 
 

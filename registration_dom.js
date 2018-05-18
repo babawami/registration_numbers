@@ -2,11 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
   let addbtn = document.querySelector(".addbtn");
   let textField = document.querySelector(".inputReg");
   let addContent = document.querySelector(".addChild");
-  let filterBtn = document.querySelector(".filter");
   let area = document.querySelector(".area");
+  let resetbtn = document.querySelector(".resetbtn");
+  let displayMessage = document.querySelector(".message")
 
   // gets the the map stored.
-  // let regStorage = JSON.parse(localStorage.getItem('storedReg'));
+  //let regStorage = JSON.parse(localStorage.getItem('storedReg'));
   let regStorage = localStorage.getItem('storedReg') ? JSON.parse(localStorage.getItem('storedReg')) : {};
   let getRegNumbers = regNumbers(regStorage); // it has input to avoid ovewrite of the entered properties
   //console.log(regStorage );
@@ -35,10 +36,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (pushRegNum !== undefined) {
         createReg(pushRegNum);
+       displayMessage.innerHTML= ""
       }
 
+      if(pushRegNum == undefined){
+        displayMessage.innerHTML= "Please Enter Correct Registration From Selected Towns Only/ Registration already exits"
+
+      }
 
     }
+
+
     // create storage to store the map
     localStorage.setItem('storedReg', JSON.stringify(getRegNumbers.returnMap()));
 
@@ -70,6 +78,13 @@ document.addEventListener('DOMContentLoaded', function() {
         createReg(reg[i])
       }
     }
+  })
+
+  resetbtn.addEventListener('click', function(){
+    localStorage.clear();
+    addContent.innerHTML = "";
+
+
   })
 
 });
