@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.clear();
     getRegNumbers.resetStorage();
     addContent.innerHTML = "";
+    displayMessage.innerHTML="";
 
 
   })
