@@ -28,10 +28,13 @@
     <!-- header section
   _____________________________________________________-->
     <div class="row">
-      <div class="twelve columns">
-        <h1>registration numbers</h1>
+      <div style="text-align: center" class="twelve columns">
+      <img src="car.png" alt="">
+        <h1>Registration Numbers</h1>
+
       </div>
     </div>
+    <br>
     <!--________________________________________________________-->
 
     <!-- filter
@@ -40,7 +43,7 @@ ___________________________________________________________-->
   <div class="twelve columns">
       <div class="three columns">
           <form  class="dropdown-menu" >
-          Select the town :
+          Select town :
           <select class="area ">
             <option class="area" value="All">All</option>
             <option class="area"  value="CA " >Cape Town</option>
@@ -50,8 +53,13 @@ ___________________________________________________________-->
           </select>
           </form>
       </div>
-    <div class="message"></div>
-    <input type="text" name="regNum" class="inputReg six columns"   pattern="[A-Z0-9]" placeholder="eg: CA 123 456" title="" maxlength="11" required>
+        <div class="six columns">
+
+          <label for=""> Enter Registration Number</label>
+  <input type="text" name="regNum" class="inputReg"   pattern="[A-Z0-9]" placeholder="eg: CA 123 456" title="" maxlength="11" required>
+  <div class="message"></div>
+
+        </div>
 
   </div>
 </div>
