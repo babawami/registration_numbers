@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   resetbtn.addEventListener('click', function(){
     localStorage.clear();
+    getRegNumbers.resetStorage();
     addContent.innerHTML = "";
 
 

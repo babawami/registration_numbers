@@ -52,11 +52,16 @@ function regNumbers(regStorage) { // the input is to tell function that map shou
 //
 // }
 
+function resetStorage() {
+   return regMap = {};
+ }
+
 
   return {
     storeRegNum: storeRegNum,
     returnMap: returnMap,
     filterReg:filterReg,
+    resetStorage:resetStorage,
   }
 
 }
