@@ -67,6 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
     for (i = 0; i < list.length; i++) {
       createReg(list[i]);
     }
+    displayMessage.innerHTML="";
+
 
   });
 
