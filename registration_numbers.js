@@ -2,25 +2,31 @@ function regNumbers(regStorage) { // the input is to tell function that map shou
   let EnterPlateNum = "";
   let regMap = regStorage || {};
 
-  function storeRegNum(EnterPlateNum) {
-    // it needs to check firstly for this letters before pushing the registration
-    let regList = ['CA ', 'CJ ', 'CL ', 'CAW '];
+  function storeRegNum(numbersReg) {
+    if(numbersReg !== ''){
+      EnterPlateNum = numbersReg;
 
-    if (regMap[EnterPlateNum] === undefined) {
-      for (var i = 0; i < regList.length; i++) {
-        if(EnterPlateNum.startsWith(regList[i])){
-          regMap[EnterPlateNum] = 0;
-          for (var key in regMap) {
-            var reg = key;
-            //return true;
+      // it needs to check firstly for this letters before pushing the registration
+      let regList = ['CA ', 'CJ ', 'CL ', 'CAW '];
+
+      if (regMap[EnterPlateNum] === undefined) {
+        for (var i = 0; i < regList.length; i++) {
+          if(EnterPlateNum.startsWith(regList[i])){
+            regMap[EnterPlateNum] = 0;
+            for (var key in regMap) {
+              var reg = key;
+              //return true;
+            }
+           return reg;
           }
-         return reg;
-        }
+
+          }
 
         }
+    //  return false;
 
-      }
-  //  return false;
+    }
+
 
     }
 

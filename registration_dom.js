@@ -29,9 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function displayRegNumber() {
     let plateReg = textField.value.trim().toUpperCase();
+    let allowedChar = /^[a-zA-Z0-9 ]+$/;
     // Run when the textField is filled
-    if (plateReg !== "") {
-      let pushRegNum = getRegNumbers.storeRegNum(plateReg); // push to map
+    if ( plateReg.match(allowedChar)) {
+
+      var pushRegNum = getRegNumbers.storeRegNum(plateReg); // push to map
+      console.log(pushRegNum);
 
 
       if (pushRegNum !== undefined) {
@@ -44,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
       }
 
+    }
+    else{
+        displayMessage.innerHTML= "Please Enter only letters and Numbers"
     }
 
 
