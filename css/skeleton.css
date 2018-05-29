@@ -403,10 +403,18 @@ there.
 
 
 /* Larger than mobile */
-@media (min-width: 400px) {}
+@media (max-width: 1196px) {
+  .norm {
+    border-bottom: 1px solid black;
+  }
+}
 
 /* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
+@media  (min-width: 345px) and (max-width: 452px) {
+  button{
+    display: flow-root;
+  }
+}
 
 /* Larger than tablet */
 @media (min-width: 750px) {}

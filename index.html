@@ -21,6 +21,27 @@
   <link rel="stylesheet" href="css/registration_numbers.css">
   <script src="registration_numbers.js" charset="utf-8"></script>
   <script src="registration_dom.js" charset="utf-8"></script>
+  <!-- add links for template -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="regtemplate_numbers.js" charset="utf-8"></script>
+  <script src="template_dom.js" charset="utf-8"></script>
+
+
+  <script type="text/x-template" class="totalTemplate">
+  <ul>
+{{! each helps with looping key values of the map}}
+       {{#each addReg}}
+
+      <li>{{this}}</li>
+
+      {{/each}}
+
+
+  </ul>
+
+    </script>
+
+
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </head>
@@ -36,53 +57,46 @@
 
       </div>
     </div>
+    </div>
     <br>
     <!--________________________________________________________-->
 
     <!-- filter
 ___________________________________________________________-->
+<div class="containerTwo norm">
 <div class="row">
-  <div class="twelve columns">
-      <div class="three columns">
-          <form  class="dropdown-menu" >
-          Select town :
-          <select class="area ">
-            <option class="area" value="All">All</option>
-            <option class="area"  value="CA " >Cape Town</option>
-            <option  class="area" value="CAW ">George</option>
-            <option class="area"   value="CJ ">Paarl</option>
-            <option  class="area" value="CL ">Stellenbosch</option>
-          </select>
-          </form>
-      </div>
-        <div class="six columns">
+        <h4 class="dropdown-menu">Without Handlebars</h4>
+
+        <div class="">
 
           <label for=""> Enter Registration Number</label>
   <input type="text" name="regNum" class="inputReg"   pattern="[A-Z0-9]" placeholder="eg: CA 123 456" title="" maxlength="11" required>
+        <button type="button" name="button" class="addbtn">ADD</button>
+        <button type="button" name="button" class="resetbtn">Reset</button>
   <div class="message"></div>
+        </div>
+        <br>
 
+        <div class="">
+            <form  class="" >
+            Select town :
+            <select class="area ">
+              <option class="area" value="All">All</option>
+              <option class="area"  value="CA " >Cape Town</option>
+              <option  class="area" value="CAW ">George</option>
+              <option class="area"   value="CJ ">Paarl</option>
+              <option  class="area" value="CL ">Stellenbosch</option>
+            </select>
+            </form>
         </div>
 
-  </div>
+
 </div>
 
-    <br>
-    <!--________________________________________________________-->
 
-    <!-- input area
- ____________________________________________________________-->
-
-    <!--______________________________________________________-->
 
     <!-- button area
  ____________________________________________________________-->
-
-      <button type="button" name="button" class="addbtn">ADD</button>
-      <button type="button" name="button" class="resetbtn">Reset</button>
-
-
-    <!--______________________________________________________-->
-
 
     <!--add new created element
  ____________________________________________________-->
@@ -96,9 +110,56 @@ ___________________________________________________________-->
     <!--_______________________________________________-->
   </div>
 
-
-  <!-- End Document
+  <!-- End Document for no handlebars
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="containerTwo temp">
+  <div class="row">
+  <h4 class="dropdown-menu">With Handlebars</h4>
+
+
+ <div class="">
+      <label for=""> Enter Registration Number</label>
+      <input type="text" name="regNum" class="regInput"   pattern="[A-Z0-9]" placeholder="eg: CA 123 456" title="" maxlength="11" required>
+      <button type="button" name="button" class="btnAdd">ADD</button>
+      <button type="button" name="button" class="btnReset">Reset</button>
+      <div class="alert"></div>
+  </div>
+</div>
+
+    <br>
+
+    <!-- button area
+ ____________________________________________________________-->
+ <div class="">
+ <form  class="" >
+ Select town:
+ <select class="town ">
+   <option class="town" value="All">All</option>
+   <option class="town"  value="CA " >Cape Town</option>
+   <option  class="town" value="CAW ">George</option>
+   <option class="town"   value="CJ ">Paarl</option>
+   <option  class="town" value="CL ">Stellenbosch</option>
+ </select>
+ </form>
+ </div>
+
+
+
+    <!--______________________________________________________-->
+
+
+    <!--add content from template
+ ____________________________________________________-->
+    <div class="row">
+      <label for="">Registration Numbers</label>
+      <div class="templateContent">
+      </div>
+    </div>
+
+
+
+ </div>
+
 
 </body>
 

@@ -7,6 +7,24 @@ h1{
   text-align: center;
 }
 
+.containerTwo {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+  float: left;
+  /* border: 1px solid black; */
+  box-sizing: border-box; }
+
+   /* .norm{
+     border-right:  1px solid black;
+  }
+
+  .temp{
+    border-left:  1px solid black;
+  } */
+
 
 
 .dropdown-menu{
@@ -20,6 +38,10 @@ h1{
 .dropdown-menu ul{
   list-style-type: none;
   padding: 0;
+}
+
+h4 {
+  margin-top: 10px;
 }
 
 .menu li{
@@ -56,6 +78,42 @@ h1{
 }
 
 .message{
+  color: #603d7b;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+/* css for handlebars */
+
+.regInput {
+  text-transform: uppercase;
+}
+
+.templateContent li{
+  text-transform: uppercase;
+  border: 2px solid #603d7b;
+  background-color: yellow;
+  list-style-type: none;
+  width:100px;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.btnAdd{
+  background-color: #5dd339;
+  color: #fff;
+}
+
+.btnReset{
+  background-color: #f20202;
+  color: #fff;
+}
+
+.alert{
   color: #603d7b;
   text-transform: capitalize;
   font-weight: bold;

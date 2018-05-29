@@ -43,13 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       if(pushRegNum == undefined){
-        displayMessage.innerHTML= "Please Enter Correct Registration From Selected Towns Only/ Registration already exits"
+        displayMessage.innerHTML= "Please Enter Registration from CA,CAW,CL,CJ/Invalid Input";
 
       }
 
     }
     else{
-        displayMessage.innerHTML= "Please Enter only letters and Numbers"
+        displayMessage.innerHTML= "Please Enter Registration"
     }
 
 
