@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 
   resetbtn.addEventListener('click', function(){
-    localStorage.clear();
+  localStorage.removeItem('storedReg');
     getRegNumbers.resetStorage();
     addContent.innerHTML = "";
     displayMessage.innerHTML="";

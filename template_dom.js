@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // reset button to clear the localStorage
   resetbtn.addEventListener('click', function() {
-    localStorage.clear();
+    localStorage.removeItem('storetemp');
     getRegNumbers.resetStorage();
     addContent.innerHTML = "";
     displayMessage.innerHTML = "";
